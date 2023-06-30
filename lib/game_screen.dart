@@ -180,7 +180,7 @@ class _GameScreenState extends State<GameScreen> {
                           ),
                         ),
                         const SizedBox(height: 40),
-                        InkWell(
+                        GestureDetector(
                           onTap: () {
                             _clearBoard();
                           },
@@ -190,20 +190,20 @@ class _GameScreenState extends State<GameScreen> {
                               height: 50,
                               width: 140,
                               decoration: BoxDecoration(
-                                  color: Colors.green.shade500.withOpacity(0.8),
+                                  color: Colors.black,
                                   borderRadius: BorderRadius.circular(10),
                                   boxShadow: const [
                                     BoxShadow(
-                                      color: Colors.black,
-                                      offset: Offset(8.0, 8.0),
-                                      blurRadius: 15.0,
-                                      spreadRadius: 5.0,
+                                      color: Colors.lightGreen,
+                                      spreadRadius: 5,
+                                      blurRadius: 10,
+                                      offset: Offset(4.0, 4.0),
                                     ),
                                     BoxShadow(
-                                      color: Colors.black,
-                                      offset: Offset(-8.0, -8.0),
-                                      blurRadius: 100.0,
-                                      spreadRadius: 5.0,
+                                      color: Colors.greenAccent,
+                                      spreadRadius: 2,
+                                      blurRadius: 5,
+                                      offset: Offset(-4.0, -4.0),
                                     ),
                                   ]),
                               child: Center(

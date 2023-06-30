@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_glow/flutter_glow.dart';
 import 'package:neutic/game_screen.dart';
 import 'package:neutic/glassmorphism.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -40,6 +41,33 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      Container(
+                        padding: const EdgeInsets.all(0.8),
+                        child: GlowText(
+                          "Tic Tac Toe",
+                          glowColor: Colors.cyan.shade900,
+                          blurRadius: 5,
+                          offset: const Offset(4.0, 4.0),
+                          style: GoogleFonts.antic(
+                              textStyle: const TextStyle(
+                                  fontSize: 70,
+                                  color: Colors.blueAccent,
+                                  shadows: [
+                                Shadow(
+                                    color: Colors.white,
+                                    blurRadius: 20,
+                                    offset: Offset(0.4, 0.4)),
+
+                                    Shadow(
+                                        color: Colors.blue,
+                                        blurRadius: 10,
+                                        offset: Offset(-0.8, -0.8))
+                              ],fontWeight: FontWeight.bold),fontStyle: FontStyle.italic),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 40,
+                      ),
                       Text(
                         "Enter Your Name",
                         style: GoogleFonts.belgrano(
@@ -136,18 +164,18 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                              color: Colors.green.shade700,
+                              color: Colors.black,
                               borderRadius: BorderRadius.circular(15),
                               boxShadow: const [
                                 BoxShadow(
-                                  color: Colors.black,
-                                  spreadRadius: 1,
-                                  blurRadius: 5,
+                                  color: Colors.lightGreen,
+                                  spreadRadius: 5,
+                                  blurRadius: 10,
                                   offset: Offset(4.0, 4.0),
                                 ),
                                 BoxShadow(
-                                  color: Colors.black,
-                                  spreadRadius: 1,
+                                  color: Colors.greenAccent,
+                                  spreadRadius: 2,
                                   blurRadius: 5,
                                   offset: Offset(-4.0, -4.0),
                                 ),
@@ -165,7 +193,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                 shadows: [
                                   BoxShadow(
                                     color: Colors.black,
-                                    blurRadius: 1.0,
+                                    blurRadius: 4.0,
+                                    offset: Offset(0.6, 0.6),
+                                  ),
+                                  BoxShadow(
+                                    color: Colors.black,
+                                    blurRadius: 20,
+                                    offset: Offset(-0.6, -0.6),
                                   )
                                 ],
                               )),
